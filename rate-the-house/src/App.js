@@ -3,22 +3,26 @@ import './App.css';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <Router>
+    <Route exact path="/">
+      <Redirect to="/init" />
+    </Route>
+    <div>
+      <Navbar className="navbar navbar-default">
+        <ul className="nav navbar-nav">
+          <li><NavLink className="nav-link" exact to="/init">init</NavLink></li>
+          <li><NavLink className="nav-link" exact to="/specificAdd">specificAdd</NavLink></li>
+          <li><NavLink className="nav-link" exact to="/findTenant">findTenant</NavLink></li>
+        </ul>
+      </Navbar>
+
+
+
+      <Route path="/init" component={Home} />
+      <Route path="/specificAdd" render={(props) => <LiveFeed posts={this.state.posts} {...props} />} />
+      <Route path="/findTenant" render={(props) => <Analytics posts={this.state.posts} {...props} />} />
     </div>
+  </Router>
   );
 }
 
