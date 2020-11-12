@@ -1,5 +1,5 @@
 import React from 'react';
-import './App.css';
+import './AppData.css';
 import {
     HashRouter as Router,
     Route,
@@ -8,6 +8,7 @@ import {
     Redirect
 } from 'react-router-dom';
 import { Navbar, Nav, NavItem, NavDropdown, MenuItem } from 'react-bootstrap';
+import Rating from '@material-ui/lab/Rating';
 
 class AppData extends React.Component {
 
@@ -24,7 +25,9 @@ class AppData extends React.Component {
                     postTitle: "3 bedroom house",
                     shortDescription: "three bedroom, renovated last year",
                     postID: 0,
-                    price: $600,
+                    price: 600,
+                    rating: 4,
+                    coverImage: "houseImage1.jpg",
                     imageList: ["houseImage1.jpg", "houseImage2.jpg", "houseImage3.jpg"],
                     review: [
                         { reviewRating: 5, reviewDetail: "great house" },
@@ -44,7 +47,9 @@ class AppData extends React.Component {
                     postTitle: "four bedroom house",
                     shortDescription: "four bedroom, three wash room",
                     postID: 1,
-                    price: $500,
+                    rating: 3,
+                    coverImage: "houseImage4.jpg",
+                    price: 500,
                     imageList: ["houseImage4.jpg", "houseImage5.jpg", "houseImage6.jpg"],
                     review: [
                         { reviewRating: 3, reviewDetail: "there are rats in the basement" },
@@ -64,7 +69,9 @@ class AppData extends React.Component {
                     postTitle: "Basement Bedroom",
                     shortDescription: "one room in the basement",
                     postID: 2,
-                    price: $550,
+                    rating: 2,
+                    price: 550,
+                    coverImage: "houseImage7.jpg",
                     imageList: ["houseImage7.jpg", "houseImage8.jpg"],
                     review: [
                         { reviewRating: 2, reviewDetail: "not a very good location" },
@@ -84,7 +91,9 @@ class AppData extends React.Component {
                     postTitle: "One bedroom apartment",
                     shortDescription: "",
                     postID: 3,
-                    price: $600,
+                    price: 600,
+                    rating: 3,
+                    coverImage: "houseImage9.jpg",
                     imageList: ["houseImage9.jpg", "houseImage10.jpg"],
                     review: [
                         { reviewRating: 2, reviewDetail: "I experienced bed bug" },
@@ -104,7 +113,9 @@ class AppData extends React.Component {
                     postTitle: "subLeasing a room",
                     shortDescription: "sub leasing one room",
                     postID: 4,
-                    price: $500,
+                    price: 500,
+                    rating: 0,
+                    coverImage: "houseImage11.jpg",
                     imageList: ["houseImage11.jpg", "houseImage12.jpg"],
                     review: [
                     ],
@@ -115,7 +126,71 @@ class AppData extends React.Component {
                     WIFI: "included, 50Gb/s",
                     Parking: "1"
                 }
-            ]
+            ],
+            mainPageSorting: "default",
         };
     }
+
+    updateSortingMethod(sortingMethod) {
+        this.setState({
+            mainPageSorting: sortingMethod
+        })
+    }
+
+    // locationGetter(requiredID) {
+    //     var requiredAd = this.state.housePost.filter(x => x.postID === requiredID)
+    //     return requiredAd.location
+    // }
+
+    renderItemList() {
+        switch (this.props.mainPageSorting) {
+            case "default":
+                return (
+                    <div>
+                        {this.renderSingleItem(0)}<br />
+                        {this.renderSingleItem(1)}<br />
+                        {this.renderSingleItem(2)}<br />
+                        {this.renderSingleItem(3)}<br />
+                        {this.renderSingleItem(4)}<br />
+                    </div>
+                )
+
+            case "threeBedroom":
+                return (
+                    <div>
+                        {this.renderSingleItem(0)}<br />
+                    </div>
+                )
+        }
+    }
+    renderSingleItem(requiredID) {
+        var requiredAd = this.state.housePost[requiredID]
+        return (
+            < div id="postContainer">
+                <div id="postImage">
+                    {/* <img src={requiredAd.imageList[0]} /> */}
+                    <p> {requiredAd.imageList[0]} </p>
+                </div>
+                <div id="postPrice">${requiredAd.price}</div>
+                <Rating id="postRating" name="read-only" value={requiredAd.rating} readOnly />
+                <div id="postTitle">{requiredAd.postTitle}</div>
+                <div id="postContent">{requiredAd.shortDescription}</div>
+            </div >
+        )
+
+    }
+
+    getHousePost() {
+        return this.state.housePost
+    }
+
+    render() {
+        return (
+            <div>
+                {this.renderItemList()}
+            </div>
+        )
+    }
 }
+
+export default AppData
