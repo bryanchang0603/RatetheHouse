@@ -4,8 +4,18 @@
 }
 
 .root_left{
-    width: 60%;
+    width: 100%;
     padding: 5px
+}
+
+.root_right{
+  width: 500px;
+  padding: 5px
+}
+
+.miniMap{
+  width: 500px;
+  height: 400px
 }
 
 .paper{
@@ -13,9 +23,19 @@
     max-width: 500
 }
 
+.otherChatPox{
+  position: 'absolute';
+  bottom: 250px;
+}
+
 .image{
     width: 100px;
     height: 100px
+}
+
+.imageUtility{
+  width: 20px;
+  height: 20px
 }
 .imageHouse{
   width: 800px;
