@@ -172,7 +172,9 @@ class AppData extends React.Component {
                     <p> {requiredAd.imageList[0]} </p>
                 </div>
                 <div id="postPrice">${requiredAd.price}</div>
-                <Rating id="postRating" name="read-only" value={requiredAd.rating} readOnly />
+                <div id="postRating">
+                    <Rating name="read-only" value={requiredAd.rating} readOnly />
+                </div>
                 <div id="postTitle">{requiredAd.postTitle}</div>
                 <div id="postContent">{requiredAd.shortDescription}</div>
             </div >
