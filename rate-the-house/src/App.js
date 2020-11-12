@@ -8,6 +8,7 @@ import title from './Title.png';
 import logo from './logo.jpg';
 import { InputGroup, DropdownButton, Dropdown, FormControl, FormGroup, Button } from 'react-bootstrap';
 import AppData from './AppData.js';
+import SpecificAdPage from './SpecificAdPage';
 //bing map key: ArVAogdJTqdKlO7mo9SXp1beyv6os158VaiIjB9iAag_qcaI6j1hiJct4aby0lIz
 /* To add router: yarn add react-router-dom */
 class MapView extends React.Component {
@@ -67,15 +68,26 @@ class MapView extends React.Component {
           </InputGroup>
 
         </div>
-        <div className="map-one" style={mapStyle}>
-          <ReactBingmaps
-            id="one"
-            bingmapKey={bingmapKey}
-            center={[43.2609, -79.9192]}
-            zoom={11}
-            infoboxesWithPushPins={infoboxesWithPushPins}
-          >
-          </ReactBingmaps>
+        <div>
+          <table>
+            <tr>
+              <th>
+                <AppData mainPageSorting="default" />
+              </th>
+              <th>
+                <div className="map-one" style={mapStyle}>
+                  <ReactBingmaps
+                    id="one"
+                    bingmapKey={bingmapKey}
+                    center={[43.2609, -79.9192]}
+                    zoom={11}
+                    infoboxesWithPushPins={infoboxesWithPushPins}
+                  >
+                  </ReactBingmaps>
+                </div>
+              </th>
+            </tr>
+          </table>
         </div>
       </div>
     );
@@ -119,12 +131,13 @@ class App extends React.Component {
           <img src={logo} alt='logo' style={logoStyle} />
           <img src={title} alt='title' style={titleStyle} />
         </div>
-        <AppData mainPageSorting = "default"/>
+
         <Router>
           <HeaderWithRouter />
           <Switch>
             <Route exact path='/' render={(props) => <MapView {...props} bingmapKey={this.state.bingmapKey} infoboxesWithPushPins={this.state.infoboxesWithPushPins} />} />
             <Route path='/home' render={(props) => <MapView {...props} bingmapKey={this.state.bingmapKey} infoboxesWithPushPins={this.state.infoboxesWithPushPins} />} />
+            <Route path='/adPage' component={SpecificAdPage} />
           </Switch>
         </Router>
       </React.Fragment>
