@@ -9,6 +9,7 @@ import logo from './logo.jpg';
 import { InputGroup, DropdownButton, Dropdown, FormControl, FormGroup, Button } from 'react-bootstrap';
 import AppData from './AppData.js';
 import SpecificAdPage from './SpecificAdPage';
+import FindTenant from './FindTenant'
 //bing map key: ArVAogdJTqdKlO7mo9SXp1beyv6os158VaiIjB9iAag_qcaI6j1hiJct4aby0lIz
 /* To add router: yarn add react-router-dom */
 class MapView extends React.Component {
@@ -138,6 +139,7 @@ class App extends React.Component {
             <Route exact path='/' render={(props) => <MapView {...props} bingmapKey={this.state.bingmapKey} infoboxesWithPushPins={this.state.infoboxesWithPushPins} />} />
             <Route path='/home' render={(props) => <MapView {...props} bingmapKey={this.state.bingmapKey} infoboxesWithPushPins={this.state.infoboxesWithPushPins} />} />
             <Route path='/adPage' component={SpecificAdPage} />
+            <Route path='/FindTenant' component={FindTenant} />
           </Switch>
         </Router>
       </React.Fragment>

@@ -14,7 +14,6 @@ import CheckIcon from '@material-ui/icons/Check';
 import ClearIcon from '@material-ui/icons/Clear';
 import WifiRoundedIcon from '@material-ui/icons/WifiRounded';
 import LocalParkingRoundedIcon from '@material-ui/icons/LocalParkingRounded';
-import logo from './logo.jpg';
 import landlordImg from './landlord1.jpg'
 import houseImage1 from "./houseImage1.jpg"
 import houseImage2 from "./houseImage2.jpg"
@@ -119,13 +118,13 @@ class specificAdPage extends React.Component {
                         </Grid>
                         <Grid item>
                             <DropdownButton id="dropdown-basic-button" title={this.state.reviewSorting}>
-                                <Dropdown.Item
+                                <Dropdown.Item href="#"
                                     onClick={() => { this.setState({ reviewSorting: "Rating" }) }}>
                                     Rating</Dropdown.Item>
-                                <Dropdown.Item href="#/action-2"
+                                <Dropdown.Item href="#"
                                     onClick={() => { this.setState({ reviewSorting: "User Name A-Z" }) }}>
                                     User Name A-Z</Dropdown.Item>
-                                <Dropdown.Item href="#/action-3"
+                                <Dropdown.Item href="#"
                                     onClick={() => { this.setState({ reviewSorting: "Default" }) }}>
                                     Default</Dropdown.Item>
                             </DropdownButton>
