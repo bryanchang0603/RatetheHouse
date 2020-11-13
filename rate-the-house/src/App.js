@@ -1,14 +1,15 @@
 import React, { Component } from 'react';
 import './App.css';
 // import MainArea from './MainArea';
-import PeopleCard from './PeopleCard';
+import ReviewPage from './ReviewPage';
+import AppData from './AppData.js';
 
 class App extends Component {
   render() {
     return (
       <div className="App">
         {/* <MainArea /> */}
-        <PeopleCard />
+        <ReviewPage />
 
         
       </div>
