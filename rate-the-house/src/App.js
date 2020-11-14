@@ -2,7 +2,7 @@ import './App.css';
 import React from 'react';
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import { ReactBingmaps } from 'react-bingmaps';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
 import { HeaderWithRouter } from './navBar';
 import title from './Title.png';
 import logo from './logo.jpg';

@@ -7,21 +7,287 @@ import Typography from '@material-ui/core/Typography';
 import { ReactBingmaps } from 'react-bingmaps';
 import ButtonBase from '@material-ui/core/ButtonBase';
 import Rating from '@material-ui/lab/Rating';
-import IconButton from '@material-ui/core/IconButton';
-import ArrowBackIosRoundedIcon from '@material-ui/icons/ArrowBackIosRounded';
-import ArrowForwardIosRoundedIcon from '@material-ui/icons/ArrowForwardIosRounded';
-import CheckIcon from '@material-ui/icons/Check';
 import ClearIcon from '@material-ui/icons/Clear';
-import WifiRoundedIcon from '@material-ui/icons/WifiRounded';
-import LocalParkingRoundedIcon from '@material-ui/icons/LocalParkingRounded';
-import landlordImg from './landlord1.jpg'
-import houseImage1 from "./houseImage1.jpg"
-import houseImage2 from "./houseImage2.jpg"
-import houseImage3 from "./houseImage3.jpg"
-import utility from "./Utility.png"
-import { Launcher } from 'react-chat-window'
+import Emma from './I_EmmaAdson.jpg'
+import Susan from './I_SusanMiller.jpg'
+import John from './I_JohnEbron.jpg'
+import Williams from './I_WilliamsMiller.jpg'
+import Sophia from './I_SophiaLan.jpg'
+import Jeff from './I_JeffBullard.jpg'
 import { InputGroup, DropdownButton, Dropdown, FormControl, FormGroup, Button } from 'react-bootstrap';
+import { BrowserRouter as Router, Route, Switch, Redirect, useHistory } from 'react-router-dom';
+import SpecificAdPage from './SpecificAdPage';
 
+
+function UpdateSearch(sortMethod, filterMethod) {
+    const history = useHistory();
+
+    function handleClick() {
+        history.push("/FindTenant/hahah/Male");
+    }
+
+    return (
+        <Button variant="dark" onClick={handleClick}>
+            Go home
+        </Button>
+    );
+}
+
+class renderTennant extends React.Component {
+    constructor(props) {
+        super(props);
+
+        // An array of social media posts messages, and we'll increment nextID
+        // to maintain a unique ID for each post in our array
+        this.state = {
+            infoID: [{
+                name: "Emma Adson",
+                rent: "$500-$1000",
+                perferRegion: "Any",
+                extraInfo: "Look for short term"
+            },
+            {
+                name: "Susan Miller",
+                rent: "$750-$1250",
+                perferRegion: "Westdale",
+                extraInfo: "Have a Dog"
+            },
+            {
+                name: "John Ebron",
+                rent: "$750-$1250",
+                perferRegion: "Any",
+                extraInfo: "None"
+            },
+            {
+                name: "Williams Miller",
+                rent: "$500-$1000",
+                perferRegion: "Downtown",
+                extraInfo: "Final Year"
+            },
+            {
+                name: "Sophia Lan",
+                rent: "$500-$750",
+                perferRegion: "any",
+                extraInfo: "None"
+            },
+            {
+                name: "Jeff Bullard",
+                rent: "$500-$1500",
+                perferRegion: "any",
+                extraInfo: "None"
+            },
+            ],
+        };
+    }
+    renderSingleTennant(image, infoID) {
+        return (
+            <Grid item container direction="column" justify="flex-start" alignItems="stretch">
+                <Grid item>
+                    <img className="Tennant" alt={this.state.infoID[infoID].name} src={image} />
+                </Grid>
+                <Grid item>
+                    <Typography gutterBottom variant="subtitle1">
+                        Name: {this.state.infoID[infoID].name}
+                    </Typography>
+                </Grid>
+                <Grid item>
+                    <Typography gutterBottom variant="subtitle1">
+                        Rent Exception: {this.state.infoID[infoID].rent}
+                    </Typography>
+                </Grid>
+                <Grid item>
+                    <Typography gutterBottom variant="subtitle1">
+                        Region Preference: {this.state.infoID[infoID].perferRegion}
+                    </Typography>
+                </Grid>
+                <Grid item>
+                    <Typography gutterBottom variant="subtitle1">
+                        Additional Info: {this.state.infoID[infoID].extraInfo}
+                    </Typography>
+                </Grid>
+                <Grid item container direction="row" justify="space-between" alignItems="flex-start">
+                    <Grid item>
+                        <Button >
+                            <ClearIcon fontSize="inherit"
+                                style={{ fontSize: "small" }} />
+                        To Profile
+                        </Button>
+                    </Grid>
+                    <Grid item>
+                        <Button >
+                            <ClearIcon fontSize="inherit"
+                                style={{ fontSize: "small" }} />
+                        Take a Talk
+                    </Button>
+                    </Grid>
+                </Grid>
+
+            </Grid>
+        )
+    }
+
+    renderTennants() {
+        if (this.props.match.params.filterMethod == "Male") {
+            if (this.props.match.params.sortMethod == "Name") {
+                return (< Grid container xs={12} direction="column" justify="flex-start" alignItems="center" >
+                    <Grid item xs={12} container direction="row" justify="space-evenly" alignItems="center">
+                        <Grid item>
+                            {this.renderSingleTennant(Jeff, 5)}
+                        </Grid>
+                        <Grid item>
+                            {this.renderSingleTennant(John, 2)}
+                        </Grid>
+                        <Grid item>
+                            {this.renderSingleTennant(Williams, 3)}
+                        </Grid>
+                    </Grid>
+                </Grid >)
+            } else if (this.props.match.params.sortMethod == "Price L-H") {
+                return (< Grid container xs={12} direction="column" justify="flex-start" alignItems="center" >
+                    <Grid item xs={12} container direction="row" justify="space-evenly" alignItems="center">
+                        <Grid item>
+                            {this.renderSingleTennant(Williams, 3)}
+                        </Grid>
+                        <Grid item>
+                            {this.renderSingleTennant(John, 2)}
+                        </Grid>
+                        <Grid item>
+                            {this.renderSingleTennant(Jeff, 5)}
+                        </Grid>
+                    </Grid>
+                </Grid >)
+            }
+            else if (this.props.match.params.sortMethod == "Price H-L") {
+                return (< Grid container xs={12} direction="column" justify="flex-start" alignItems="center" >
+                    <Grid item xs={12} container direction="row" justify="space-evenly" alignItems="center">
+                        <Grid item>
+                            {this.renderSingleTennant(Jeff, 5)}
+                        </Grid>
+                        <Grid item>
+                            {this.renderSingleTennant(John, 2)}
+                        </Grid>
+                        <Grid item>
+                            {this.renderSingleTennant(Williams, 3)}
+                        </Grid>
+                    </Grid>
+                </Grid >)
+            }
+            else {
+                return (< Grid container xs={12} direction="column" justify="flex-start" alignItems="center" >
+                    <Grid item xs={12} container direction="row" justify="space-evenly" alignItems="center">
+                        <Grid item>
+                            {this.renderSingleTennant(John, 2)}
+                        </Grid>
+                        <Grid item>
+                            {this.renderSingleTennant(Williams, 3)}
+                        </Grid>
+                        <Grid item>
+                            {this.renderSingleTennant(Jeff, 5)}
+                        </Grid>
+                    </Grid>
+                </Grid >)
+            }
+        }
+        else if (this.props.match.params.filterMethod == "Female") {
+            if (this.props.match.params.sortMethod == "Name") {
+                return (< Grid container xs={12} direction="column" justify="flex-start" alignItems="center" >
+                    <Grid item xs={12} container direction="row" justify="space-evenly" alignItems="center">
+                        <Grid item>
+                            {this.renderSingleTennant(Emma, 0)}
+                        </Grid>
+                        <Grid item>
+                            {this.renderSingleTennant(Sophia, 4)}
+                        </Grid>
+                        <Grid item>
+                            {this.renderSingleTennant(Susan, 1)}
+                        </Grid>
+                    </Grid>
+                </Grid >)
+            } else if (this.props.match.params.sortMethod == "Price L-H") {
+                return (< Grid container xs={12} direction="column" justify="flex-start" alignItems="center" >
+                    <Grid item xs={12} container direction="row" justify="space-evenly" alignItems="center">
+                        <Grid item>
+                            {this.renderSingleTennant(Sophia, 4)}
+                        </Grid>
+                        <Grid item>
+                            {this.renderSingleTennant(Emma, 0)}
+                        </Grid>
+                        <Grid item>
+                            {this.renderSingleTennant(Susan, 1)}
+                        </Grid>
+                    </Grid>
+                </Grid >)
+            }
+            else if (this.props.match.params.sortMethod == "Price H-L") {
+                return (< Grid container xs={12} direction="column" justify="flex-start" alignItems="center" >
+                    <Grid item xs={12} container direction="row" justify="space-evenly" alignItems="center">
+                        <Grid item>
+                            {this.renderSingleTennant(Susan, 1)}
+                        </Grid>
+                        <Grid item>
+                            {this.renderSingleTennant(Emma, 0)}
+                        </Grid>
+                        <Grid item>
+                            {this.renderSingleTennant(Sophia, 4)}
+                        </Grid>
+                    </Grid>
+                </Grid >)
+            }
+            else {
+                return (< Grid container xs={12} direction="column" justify="flex-start" alignItems="center" >
+                    <Grid item xs={12} container direction="row" justify="space-evenly" alignItems="center">
+                        <Grid item>
+                            {this.renderSingleTennant(Emma, 0)}
+                        </Grid>
+                        <Grid item>
+                            {this.renderSingleTennant(Susan, 1)}
+                        </Grid>
+                        <Grid item>
+                            {this.renderSingleTennant(Sophia, 4)}
+                        </Grid>
+                    </Grid>
+                </Grid >)
+            }
+        }
+        else {
+            return (
+                <Grid container xs={12} direction="column" justify="flex-start" alignItems="center">
+                    <Grid item xs={12} container direction="row" justify="space-evenly" alignItems="center">
+                        <Grid item>
+                            {this.renderSingleTennant(Emma, 0)}
+                        </Grid>
+                        <Grid item>
+                            {this.renderSingleTennant(Susan, 1)}
+                        </Grid>
+                        <Grid item>
+                            {this.renderSingleTennant(John, 2)}
+                        </Grid>
+                    </Grid>
+                    <Grid item xs={12} container direction="row" justify="space-evenly" alignItems="center">
+                        <Grid item>
+                            {this.renderSingleTennant(Williams, 3)}
+                        </Grid>
+                        <Grid item>
+                            {this.renderSingleTennant(Sophia, 4)}
+                        </Grid>
+                        <Grid item>
+                            {this.renderSingleTennant(Jeff, 5)}
+                        </Grid>
+                    </Grid>
+                </Grid>
+            )
+        }
+
+    }
+
+    render() {
+        return (
+            <div>
+                {this.renderTennants()}
+            </div>
+        )
+    }
+}
 class FindTenant extends React.Component {
     constructor(props) {
         super(props);
@@ -29,29 +295,17 @@ class FindTenant extends React.Component {
         // An array of social media posts messages, and we'll increment nextID
         // to maintain a unique ID for each post in our array
         this.state = {
-            messageList: [],
-            latitude: 43.2069,
-            longitude: -79.9192,
-            houseCategory: "Mcmaster University",
-            postTitle: "3 bedroom house",
-            shortDescription: "three bedroom, renovated last year",
-            postID: 0,
-            price: 600,
-            rating: 4,
-            displayImage: 0,
-            review: [
-                { reviewRating: 5, reviewDetail: "great house", User: "Morina" },
-                { reviewRating: 4, reviewDetail: "no complians", User: "Daivd" },
-                { reviewRating: 4, reviewDetail: "greate landlord", User: "Trump" },
-            ],
-            landlordImage: "landLordImage.jpg",
-            electricy: true,
-            water: true,
-            Heat: true,
-            WIFI: "included, 50Gb/s",
-            Parking: "2",
-            reviewSorting: "Sort By"
+            sortingOrder: "Sort By...",
+            filterOrder: "Filter By..."
         };
+    }
+
+    routeChange = () => {
+        return (
+            <Redirect
+                to={'/FindTenant/hahah/Male'}
+            />
+        )
     }
 
     render() {
@@ -67,27 +321,39 @@ class FindTenant extends React.Component {
                         <DropdownButton
                             as={InputGroup.Append}
                             variant="outline-secondary"
-                            title="Sort By..."
+                            title={this.state.sortingOrder}
                             id="input-group-dropdown-2"
                             startIcon={<ClearIcon />}
                         >
-                            <Dropdown.Item href="#">Name</Dropdown.Item>
-                            <Dropdown.Item href="#">Price Range: Low to High</Dropdown.Item>
-                            <Dropdown.Item href="#">Price Range: High to Low</Dropdown.Item>
+                            <Dropdown.Item href="#"
+                                onClick={() => { this.setState({ sortingOrder: "Name" }) }}
+                            >Name</Dropdown.Item>
+                            <Dropdown.Item href="#"
+                                onClick={() => { this.setState({ sortingOrder: "Price L-H" }) }}>
+                                Price Range: Low to High</Dropdown.Item>
+                            <Dropdown.Item href="#"
+                                onClick={() => { this.setState({ sortingOrder: "Price H-L" }) }}>
+                                Price Range: High to Low</Dropdown.Item>
                         </DropdownButton>
 
                         <DropdownButton
                             as={InputGroup.Append}
                             variant="outline-secondary"
-                            title="Filter By..."
+                            title={this.state.filterOrder}
                             id="input-group-dropdown-2"
                         >
-                            <Dropdown.Item href="#">Gender</Dropdown.Item>
-                            <Dropdown.Item href="#">Price Range: 500 - 1000</Dropdown.Item>
+                            <Dropdown.Item href="#"
+                                onClick={() => { this.setState({ filterOrder: "Male" }) }}>
+                                Male</Dropdown.Item>
+                            <Dropdown.Item href="#"
+                                onClick={() => { this.setState({ filterOrder: "Female" }) }}>
+                                Female</Dropdown.Item>
                         </DropdownButton>
-
-                        <Button variant="dark">Search</Button>
+                        <Button variant="dark " href={'/FindTenant/' + this.state.sortingOrder + '/' + this.state.filterOrder}>Search</Button>
                     </InputGroup>
+                    <div>
+                        <Route path='/FindTenant/:sortMethod/:filterMethod' component={renderTennant} />
+                    </div>
 
                 </div>
             </div>
