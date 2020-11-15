@@ -297,11 +297,11 @@ class specificAdPage extends React.Component {
                                 <ReactBingmaps
                                     id="two"
                                     bingmapKey="ArVAogdJTqdKlO7mo9SXp1beyv6os158VaiIjB9iAag_qcaI6j1hiJct4aby0lIz"
-                                    center={[43.2609, -79.9192]}
+                                    center={[43.2600, -79.9102]}
                                     zoom={15}
                                     pushPins={[
                                         {
-                                            "location": [43.2609, -79.9192], "option": { color: 'red' },
+                                            "location": [43.2600, -79.9102], "option": { color: 'red' },
                                         }
                                     ]}
                                 >

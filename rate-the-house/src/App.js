@@ -328,7 +328,6 @@ filterItem(){
             {this.renderItemList()}
             </div>
         <div>
-        {this.renderItemList()}
             <div className="map-one" style={mapStyle}>
               <ReactBingmaps
                 id="one"
