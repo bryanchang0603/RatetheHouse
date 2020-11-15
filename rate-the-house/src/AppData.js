@@ -162,7 +162,7 @@ class AppData extends React.Component {
             <a href='/adPage'>
                 < div id="postContainer" >
                     <div id="postImage">
-                        <img class = "image" alt="Test" src={image} />
+                        <img class="image" alt="Test" src={image} />
                         {/* <p> {requiredAd.imageList[0]} </p> */}
                     </div>
                     <div id="postPrice">${requiredAd.price}</div>
@@ -194,6 +194,10 @@ class AppData extends React.Component {
                 </div >
         )
 
+    }
+
+    getHousePost() {
+        return this.state.housePost
     }
    
     filterItem(){
