@@ -507,10 +507,10 @@ class comments extends React.Component {
         }
 
         if (this.state.filter === "roommate"){
-            object=object.filter( ({id,Name,rating,date,relationship,heart,text}) => relationship != "roommate" );
+            object=object.filter( ({id,Name,rating,date,relationship,heart,text}) => relationship == "roommate" );
         }
         else if(this.state.filter === "landlord"){
-            object=object.filter( ({id,Name,rating,date,relationship,heart,text}) => relationship != "landlord" );
+            object=object.filter( ({id,Name,rating,date,relationship,heart,text}) => relationship == "landlord" );
         }
         else{
             object=object.filter( ({id,Name,rating,date,relationship,heart,text}) => relationship != "relationship" );
