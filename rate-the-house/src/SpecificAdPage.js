@@ -28,8 +28,8 @@ class specificAdPage extends React.Component {
         // to maintain a unique ID for each post in our array
         this.state = {
             messageList: [],
-            latitude: 43.2069,
-            longitude: -79.9192,
+            latitude: 43.2600,
+            longitude: -79.9102,
             houseCategory: "Mcmaster University",
             postTitle: "3 bedroom house",
             shortDescription: "three bedroom, renovated last year",
