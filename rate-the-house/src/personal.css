@@ -23,6 +23,7 @@ body {
     font-size: 30px;
     text-align: center;
   }
+  
   .circle{
     position: relative;
     width:50%;
@@ -45,4 +46,18 @@ body {
   .active
   {
     color:grey;
+  }
+  table{
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+    align-content: center;
+    padding-bottom:25px;
+  }
+  td{
+    padding-bottom:20px;
+  }
+  .inputsize{
+    position:relative;
+    width:80%;
   }

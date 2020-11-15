@@ -7,6 +7,10 @@ import { HeaderWithRouter } from './navBar';
 import title from './Title.png';
 import pen from './pen.png';
 import { InputGroup, DropdownButton, Dropdown, FormControl, FormGroup, Button } from 'react-bootstrap';
+import Rating from '@material-ui/lab/Rating';
+import Typography from '@material-ui/core/Typography';
+import Box from '@material-ui/core/Box';
+
 
 class information extends React.Component {
     constructor(props) {
@@ -360,6 +364,7 @@ class preference extends React.Component {
             <div>
                 <h1>This is the page223</h1>
                 <table>
+                    <tbody>
                     <tr>
                         <td>
                         <DropdownButton
@@ -394,11 +399,20 @@ class preference extends React.Component {
                         <Dropdown.Item as="button"><div onClick={(e) => this.changeRoommate(e.target.textContent)}>Co-ed </div></Dropdown.Item>
                          </DropdownButton>
                          </td>
+                         </tr>
+                         <tr>
                          <td>
-                        <input type="text" onChange={(event) => this.setState({ Max_budget: event.target.value })}
+                        <p>Max Budget:</p>
+                        <input class="inputsize" type="text" onChange={(event) => this.setState({ Max_budget: event.target.value })}
                         value={this.state.Max_budget} disabled={this.state.line}/></td>
+                        <td>
+                        <p>Min Budget:</p>
+                        <input class="inputsize" type="text" onChange={(event) => this.setState({ Min_budget: event.target.value })}
+                        value={this.state.Min_budget} disabled={this.state.line}/></td>
                         <td><img src={pen} style={logoStyle} onClick={this.enable_disable.bind(this)}/></td>
-                     </tr>
+                        </tr>
+                    
+                     </tbody>
                 </table>
                 <p>
                 <button onClick={this.Change_Center_Up.bind(this)} style={{visibility:this.state.visible1}}>Latitude up</button>
@@ -421,12 +435,38 @@ class preference extends React.Component {
 class comments extends React.Component {
     constructor(props) {
         super(props);
+        this.state = {display1:"inherit", display2:"none",comment:"view comment",
+        reviews: [
+            {id:1,Name:"user1",rating}
+        ],
     }
+
+    }
+    changeregion() {
+        var comment = this.state.comment;
+        var display1 = this.state.display1;
+        var display2 = this.state.display2;
+        if (comment === "view comment"){
+            comment="write comment";
+            display1="none";
+            display2="inherit";
+
+        }else{
+            comment = "view comment";
+            display1="inherit";
+            display2="none";
+        }
+        this.setState({ comment: comment })
+    }
+    
     render(){
         return(
             <div>
-                <div>
-                </div>
+                <button onClick={this.changeregion.bind(this)}>{this.state.comment}</button>
+                <Box component="fieldset" mb={3} borderColor="transparent">
+                <Typography component="legend">Disabled</Typography>
+                <Rating name="disabled" value={2} disabled />
+                </Box>
             </div>
         )
     }
