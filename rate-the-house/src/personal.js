@@ -9,7 +9,7 @@ import pen from './pen.png';
 import { InputGroup, DropdownButton, Dropdown, FormControl, FormGroup, Button } from 'react-bootstrap';
 import Rating from '@material-ui/lab/Rating';
 import Typography from '@material-ui/core/Typography';
-import Box from '@material-ui/core/Box';
+import Box from '@material-ui/core/Box';  
 
 
 class information extends React.Component {
@@ -437,7 +437,7 @@ class comments extends React.Component {
         super(props);
         this.state = {display1:"inherit", display2:"none",comment:"view comment",
         reviews: [
-            {id:1,Name:"user1",rating}
+            {id:1,Name:"user1",Rating}
         ],
     }
 
