@@ -378,37 +378,46 @@ class FindTenant extends React.Component {
                             aria-label="Search Tennant"
                             aria-describedby="basic-addon2"
                         />
-                        <DropdownButton
-                            as={InputGroup.Append}
-                            variant="outline-secondary"
-                            title={this.state.sortingOrder}
-                            id="input-group-dropdown-2"
-                        >
-                            <Dropdown.Item href="#"
-                                onClick={() => { this.setState({ sortingOrder: "Name" }) }}
-                            >Name</Dropdown.Item>
-                            <Dropdown.Item href="#"
-                                onClick={() => { this.setState({ sortingOrder: "Price L-H" }) }}>
-                                Price Range: Low to High</Dropdown.Item>
-                            <Dropdown.Item href="#"
-                                onClick={() => { this.setState({ sortingOrder: "Price H-L" }) }}>
-                                Price Range: High to Low</Dropdown.Item>
-                        </DropdownButton>
+                        <tr>
+                            <td>
+                                <DropdownButton
+                                    as={InputGroup.Append}
+                                    variant="outline-secondary"
+                                    title={this.state.sortingOrder}
+                                    id="input-group-dropdown-2"
+                                >
+                                    <Dropdown.Item href="#"
+                                        onClick={() => { this.setState({ sortingOrder: "Name" }) }}
+                                    >Name</Dropdown.Item>
+                                    <Dropdown.Item href="#"
+                                        onClick={() => { this.setState({ sortingOrder: "Price L-H" }) }}>
+                                        Price Range: Low to High</Dropdown.Item>
+                                    <Dropdown.Item href="#"
+                                        onClick={() => { this.setState({ sortingOrder: "Price H-L" }) }}>
+                                        Price Range: High to Low</Dropdown.Item>
+                                </DropdownButton>
+                            </td>
 
-                        <DropdownButton
-                            as={InputGroup.Append}
-                            variant="outline-secondary"
-                            title={this.state.filterOrder}
-                            id="input-group-dropdown-2"
-                        >
-                            <Dropdown.Item href="#"
-                                onClick={() => { this.setState({ filterOrder: "Male" }) }}>
-                                Male</Dropdown.Item>
-                            <Dropdown.Item href="#"
-                                onClick={() => { this.setState({ filterOrder: "Female" }) }}>
-                                Female</Dropdown.Item>
-                        </DropdownButton>
-                        <Button variant="dark " href={'/FindTenant/' + this.state.sortingOrder + '/' + this.state.filterOrder}>Search</Button>
+                            <td>
+                                <DropdownButton
+                                    as={InputGroup.Append}
+                                    variant="outline-secondary"
+                                    title={this.state.filterOrder}
+                                    id="input-group-dropdown-2"
+                                >
+                                    <Dropdown.Item href="#"
+                                        onClick={() => { this.setState({ filterOrder: "Male" }) }}>
+                                        Male</Dropdown.Item>
+                                    <Dropdown.Item href="#"
+                                        onClick={() => { this.setState({ filterOrder: "Female" }) }}>
+                                        Female</Dropdown.Item>
+                                </DropdownButton>
+                            </td>
+
+                            <td>
+                                <Button variant="dark " href={'/FindTenant/' + this.state.sortingOrder + '/' + this.state.filterOrder}>Search</Button>
+                            </td>
+                        </tr>
                     </InputGroup>
                     <div>
                         <Route exact path='/FindTenant' component={renderTennant} />
