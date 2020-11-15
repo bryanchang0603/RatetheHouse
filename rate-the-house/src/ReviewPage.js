@@ -480,10 +480,16 @@ class Table extends React.Component {
         return (
             <div>
                 <div class="table1">
+
                     <div class="container1">
+                        {/* <div class="container"> */}
+
                         <div class="table-wrapper">
+                            {/* <div class="table-title"> */}
                             <div class="row">
                                 <div class="col-sm-3"><h2>149 Main St W</h2> <p><b>Distance to McMaster:4.1km</b></p></div>
+                                {/* <div class="col-sm-3"></div> */}
+
                                 <div><img src="/photos/149.jpg"></img></div>
 
                                 <div class="col-sm-2">
@@ -499,6 +505,7 @@ class Table extends React.Component {
                                         <span class="fa fa-star "></span>
                                     </div>
                                 </div>
+                                {/* {SimpleRating()} */}
 
                                 <table1>
                                     <table class="table">
@@ -515,11 +522,14 @@ class Table extends React.Component {
                                         <tbody>
                                             <tr>
                                                 <td>2020-07-09</td>
-                                                <td>David</td>
+                                                <td>morgan</td>
                                                 <td>The landlord is really nice...</td>
-                                                <td> </td>
 
-                                                <td></td>
+                                                <td>
+                                                    <a class="add" title="Add" ><i class="material-icons">&#xE03B;</i></a>
+                                                    <a class="edit" title="Edit"><i class="material-icons">&#xE254;</i></a>
+                                                    <a class="delete" title="Delete"><i class="material-icons">&#xE872;</i></a>
+                                                </td>
 
                                             </tr>
                                             <tr>
@@ -530,8 +540,10 @@ class Table extends React.Component {
                                         </tbody>
                                     </table>
                                 </table1>
+
                             </div>
                         </div>
+                        {/* </div> */}
                     </div>
                 </div>
 
@@ -573,12 +585,13 @@ class Table extends React.Component {
                                                 <th>Name</th>
                                                 <th>Review</th>
                                                 <th></th>
+                                                <th></th>
 
                                             </tr>
                                         </thead>
                                         <tbody>
                                             <tr>
-                                                <td>2020-01-11</td>
+                                                <td>2020-07-09</td>
                                                 <td>Morgan</td>
                                                 <td>The landlord is really nice...</td>
                                                 <td>
@@ -588,14 +601,15 @@ class Table extends React.Component {
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <td>2020-02-09</td>
-                                                <td>Bryan</td>
-                                                <td>I found bed bugs...</td>
+                                                <td>2020-08-09</td>
+                                                <td>Peter</td>
+                                                <td>A good place to live...</td>
                                             </tr>
                                         </tbody>
                                     </table>
                                 </table2>
                             </div>
+
                         </div>
                     </div>
                 </div>
@@ -639,9 +653,9 @@ class Table extends React.Component {
 
                                     <tbody>
                                         <tr>
-                                            <td>2020-10-22</td>
+                                            <td>2020-07-09</td>
                                             <td>Morgan</td>
-                                            <td>A great place with...</td>
+                                            <td>The landlord is really nice...</td>
                                             <td>
                                                 <a class="add" title="Add" ><i class="material-icons">&#xE03B;</i></a>
                                                 <a class="edit" title="Edit"><i class="material-icons">&#xE254;</i></a>
@@ -649,9 +663,9 @@ class Table extends React.Component {
                                             </td>
                                         </tr>
                                         <tr>
-                                            <td>2020-11-15</td>
-                                            <td>Isaac</td>
-                                            <td>It has a good view...</td>
+                                            <td>2020-08-09</td>
+                                            <td>Peter</td>
+                                            <td>A good place to live...</td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -698,9 +712,9 @@ class Table extends React.Component {
                                     </thead>
                                     <tbody>
                                         <tr>
-                                            <td>2020-03-09</td>
+                                            <td>2020-07-09</td>
                                             <td>Morgan</td>
-                                            <td>Not a bad place</td>
+                                            <td>The landlord is really nice...</td>
                                             <td>
                                                 <a class="add" title="Add" ><i class="material-icons">&#xE03B;</i></a>
                                                 <a class="edit" title="Edit"><i class="material-icons">&#xE254;</i></a>
@@ -709,7 +723,7 @@ class Table extends React.Component {
                                         </tr>
                                         <tr>
                                             <td>2020-08-09</td>
-                                            <td>Harry</td>
+                                            <td>Peter</td>
                                             <td>A good place to live...</td>
                                         </tr>
                                     </tbody>
@@ -759,20 +773,18 @@ class Table extends React.Component {
                                     <tbody>
                                         <tr>
                                             <td>2020-07-09</td>
-                                            <td>Alice</td>
-                                            <td>The landlord is really nice...</td>
-                                            <td></td>
-
-                                        </tr>
-                                        <tr>
-                                            <td>2020-08-09</td>
                                             <td>Morgan</td>
-                                            <td>A good place to live...</td>
+                                            <td>The landlord is really nice...</td>
                                             <td>
                                                 <a class="add" title="Add" ><i class="material-icons">&#xE03B;</i></a>
                                                 <a class="edit" title="Edit"><i class="material-icons">&#xE254;</i></a>
                                                 <a class="delete" title="Delete"><i class="material-icons">&#xE872;</i></a>
                                             </td>
+                                        </tr>
+                                        <tr>
+                                            <td>2020-08-09</td>
+                                            <td>Peter</td>
+                                            <td>A good place to live...</td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -821,9 +833,13 @@ class Table extends React.Component {
                                     <tbody>
                                         <tr>
                                             <td>2020-07-09</td>
-                                            <td>Anonymous</td>
-                                            <td>A great experience...</td>
-                                            <td></td>
+                                            <td>Morgan</td>
+                                            <td>The landlord is really nice...</td>
+                                            <td>
+                                                <a class="add" title="Add" ><i class="material-icons">&#xE03B;</i></a>
+                                                <a class="edit" title="Edit"><i class="material-icons">&#xE254;</i></a>
+                                                <a class="delete" title="Delete"><i class="material-icons">&#xE872;</i></a>
+                                            </td>
                                         </tr>
                                         <tr>
                                             <td>2020-08-09</td>
