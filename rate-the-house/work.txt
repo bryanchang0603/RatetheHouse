@@ -1,11 +1,11 @@
 Mengshan Cui
-- Responsible for the Review page
+- Responsible for the Review page UI and functionality, implementing filters, edit and delete features
 
 Bryan Chang
 - Responsible for the Specific Ad page, find tennant page, creating the website
 
 Boyu Jiang
-- Responsible for personal page, including information, preference and comment subpage
+- Responsible for the Personal page, including information, preference and comment subpage
 
 Harry 
-- Responsible for Creating the navbar, creating the main page, designing the main page layout,  implementing the map feature and searching feature in the main page. 
+- Responsible for Creating the navbar, creating the main page, designing the main page layout, implementing the map feature and searching feature in the main page. 
