@@ -524,6 +524,7 @@ class Table extends React.Component {
                                                 <td>2020-07-09</td>
                                                 <td>morgan</td>
                                                 <td>The landlord is really nice...</td>
+                                                <td> </td>
 
                                                 <td>
                                                     <a class="add" title="Add" ><i class="material-icons">&#xE03B;</i></a>
@@ -585,7 +586,6 @@ class Table extends React.Component {
                                                 <th>Name</th>
                                                 <th>Review</th>
                                                 <th></th>
-                                                <th></th>
 
                                             </tr>
                                         </thead>
@@ -594,6 +594,7 @@ class Table extends React.Component {
                                                 <td>2020-07-09</td>
                                                 <td>Morgan</td>
                                                 <td>The landlord is really nice...</td>
+
                                                 <td>
                                                     <a class="add" title="Add" ><i class="material-icons">&#xE03B;</i></a>
                                                     <a class="edit" title="Edit"><i class="material-icons">&#xE254;</i></a>
