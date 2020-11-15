@@ -2,3 +2,5 @@ Mengshan Cui
 - Responsible for the Review page
 Bryan Chang
 - Responsible for the Specific Ad page, find tennant page, creating the website
+Boyu Jiang
+-Responsible for personal page, including information, preference and comment subpage
