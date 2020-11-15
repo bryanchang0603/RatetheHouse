@@ -143,6 +143,7 @@ class MapView extends React.Component {
       infoboxesWithPushPins: [
         {
           "location": [43.2600, -79.9102],
+          "locationName": "threeBedroom",
           "addHandler": "mouseover", //on mouseover the pushpin, infobox shown
           "infoboxOption": { title: '3 bedroom house', description: '$600' },
           "pushPinOption": { title: '3 bedroom house', description: 'Pushpin' },
@@ -257,9 +258,11 @@ renderSingleItem_nolink(requiredID, image) {
 filterItem(){
     this.setState({
         housePost: this.state.housePost.filter(h => h.postTitle === "3 bedroom house"),
-        mainPageSorting: "threeBedroom"
+        mainPageSorting: "threeBedroom",
+        infoboxesWithPushPins: this.state.infoboxesWithPushPins.filter(x => x.locationName === "threeBedroom")
     })
 }
+
   render() {
     var mapStyle = {
       width: "70%",
@@ -281,13 +284,13 @@ filterItem(){
       bottom: '5px',
       height: '70%'
   }
-    var bingmapKey = this.props.bingmapKey;
-    var infoboxesWithPushPins = this.props.infoboxesWithPushPins;
+    var bingmapKey = this.state.bingmapKey;
+    var infoboxesWithPushPins = this.state.infoboxesWithPushPins;
     
     
     return (
       <div>
-                 <div class='searchBar' style={searchStyle}>
+          <div class='searchBar' style={searchStyle}>
           <InputGroup size='lg'>
             <FormControl
               placeholder="Search nearby"
