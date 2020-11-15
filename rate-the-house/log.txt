@@ -1,3 +1,27 @@
+commit f35d3021a3474ff5b3802d797bbb440377eae464
+Author: Bryan Chang <changb9@mcmaster.ca>
+Date:   Sun Nov 15 14:06:50 2020 -0500
+
+    minor UI fix for ReviewPage
+
+commit 842098c00b534a97de43594f247a10edbe93c11e
+Author: Bryan Chang <changb9@mcmaster.ca>
+Date:   Sun Nov 15 13:48:33 2020 -0500
+
+    adding website.txt
+
+commit ea9f5f066a6b99debe986507c0ab3b6d02571c1c
+Author: Bryan Chang <changb9@mcmaster.ca>
+Date:   Sun Nov 15 13:37:16 2020 -0500
+
+    manually merge Boyu Branch
+
+commit b1753352091e3b48a4c5a6f26b6a0fffe73cd2b9
+Author: harry fu <fuhaoyuan1997@gmail.com>
+Date:   Sun Nov 15 13:30:01 2020 -0500
+
+    -Add log.txt
+
 commit ee941801db20f8062ddd52a0ac112e2ec5838410
 Merge: afa5c02 8684af5
 Author: Baosheng Chang <changb9@mcmaster.ca>
