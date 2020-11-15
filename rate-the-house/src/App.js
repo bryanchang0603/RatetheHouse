@@ -13,6 +13,7 @@ import image3 from './T_Basement.jpg';
 import image4 from './T_Apartment.jpg';
 import image5 from './T_Bedroom.jpg';
 import Rating from '@material-ui/lab/Rating';
+import Personal from './personal'
 import { InputGroup, DropdownButton, Dropdown, FormControl, FormGroup, Button } from 'react-bootstrap';
 
 //import AppData from './AppData.js';
@@ -561,9 +562,8 @@ class App extends React.Component {
             <Route exact path='/' render={(props) => <MapView {...props} bingmapKey={this.state.bingmapKey} infoboxesWithPushPins={this.state.infoboxesWithPushPins} />} />
             <Route path='/home' render={(props) => <MapView {...props} bingmapKey={this.state.bingmapKey} infoboxesWithPushPins={this.state.infoboxesWithPushPins} />} />
             <Route path='/adPage' component={SpecificAdPage} />
-            {/* <Route path='/FindTenant' component={FindTenant} /> */}
             <Route path='/ReviewPage' component={ReviewPage} />
-
+            <Route exact path='/personal' component={Personal}/>
             <Route path='/FindTenant' component={FindTenant} />
           </Switch>
         </Router>
