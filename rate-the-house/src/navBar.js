@@ -12,9 +12,7 @@ export const NavBar = props =>{
             <Nav className="mr-auto" variant='pills' activeKey={location.pathname}>
                 <Nav.Item>
                     <Nav.Link href='/home'>Home</Nav.Link>
-                </Nav.Item>
-                <Nav.Item>
-                    <Nav.Link href='/FindTenant'>Find Tennant</Nav.Link>
+                    <Nav.Link href='/personal'>Personal</Nav.Link>
                 </Nav.Item>
             </Nav>
             </Navbar.Collapse>
