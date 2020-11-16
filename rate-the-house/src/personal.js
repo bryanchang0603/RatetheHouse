@@ -412,6 +412,7 @@ class preference extends React.Component {
                     
                      </tbody>
                 </table>
+                <p>Double Click on buttons to make changes on preferred area</p>
                 <p>
                 <button onClick={this.Change_Center_Up.bind(this)} style={{visibility:this.state.visible1}}>Latitude up</button>
                 <button onClick={this.Change_Center_down.bind(this)} style={{visibility:this.state.visible2}}>Latitude down</button>
